@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<?php
+    session_start();
+    if(!isset($_SESSION['id_user'])){
+        header("location: index.php");
+    }
+?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-icons-1.11.1/bootstrap-icons-1.11.1/bootstrap-icons.min.css">
+    <title>password modif</title>
+</head>
+<body>
+
+    <div class="row">
+        <div class="col-md-3 bg-light pt-3">
+            <div style="text-align:center;">
+                <?php   
+                    if($_SESSION['lien_profil']=='image'){
+                ?>
+                <div>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#profil">
+                        <i class="bi-person-circle" style="color:black; font-size: 5em"></i><br>
+                        <span style="color: green; font-weight:bold">Photo profil</span>
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="profil" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modifier la photo de profil</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form action="traitement_image.php" method="post" enctype="multipart/form-data">
+                                    <div class="modal-body">
+                                        <input type="file" class="form-control" name="fichier" id="fichier">                   
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <DIV class="d-grid gap-2 mb-2 mt-2">
+                                            <button type="submit" class="btn btn-success">Submit</button>
+                                        </DIV> 
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+                    }
+                    else{
+                ?>
+                <div>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#profil">
+                        <img src="<?php echo $_SESSION['lien_profil'] ?>" alt="photo profil" class="rounded-circle border border-success" style="width: 200px; height:200px">
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="profil" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modifier la photo de profil</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form action="traitement_image.php" method="post" enctype="multipart/form-data">
+                                    <div class="modal-body">
+                                        <input type="file" class="form-control" name="fichier" id="fichier">                   
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <DIV class="d-grid gap-2 mb-2 mt-2">
+                                            <button type="submit" class="btn btn-success">Submit</button>
+                                        </DIV> 
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+                    }
+                ?>
+            </div>
+            <div style="text-align:center;">
+                <?php
+                    echo '<br>USERNAME: <i>'.$_SESSION['nom'].' '.$_SESSION['prenom'].                    
+                    '</i><br>EMAIL: <i>'.$_SESSION['email'].
+                    '</i><br>PHONE: <i>'.$_SESSION['telephone'].'</i>';
+                ?>
+            </div>
+            <div style="text-align:center;" class="d-grid gap-2 mb-2 mt-2">
+                <a href="compte_modif.php"><button class="btn btn-outline-success">Modifier mon compte</button></a>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-8 bg-light "> 
+            <div style="text-align: center;">
+                <h1><i>Modification du password utilisateur</i></h1>
+                <p>Remplissez les cases suivantes avec les nouvelles info<p>
+            </div>
+            <form action="traitement_password.php" method="POST">
+                <?php 
+                    if(isset($_GET['msg'])){
+                        echo'<p style="color:white; text-align:center; background-color:red;">'. $_GET['msg'].'</p>';
+                    } 
+                ?>
+                <br><input type="password" placeholder="Entrer votre ancien password" class="form-control" name="old" id="nom"><br>
+                <input type="password" placeholder="Entrer votre nouveau password" class="form-control" name="new" id="nom" >
+
+                <div>
+                   <br> <button class="btn btn-success col-md-12">Modifier le password</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

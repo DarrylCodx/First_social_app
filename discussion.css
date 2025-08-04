@@ -1,0 +1,29 @@
+    .message{
+        width: 100%;
+    }
+
+    .messageSender{
+        text-align: right;
+        height:fit-content;
+        padding-top:10px; 
+        margin-top: 25px;   
+        border: 1px solid grey;
+        padding-right: 10px;
+        padding-left: 20px;
+        background-color: green;
+        border-bottom-left-radius: 30px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        width: max-content;
+    }
+
+    .messageReceiver{
+        text-align: right;
+        height:fit-content;
+        margin-top: 25px;   
+        border: 1px solid grey;
+        border-radius: 10px 30px;
+        padding-right: 10px;
+        background-color: grey;
+    }
+

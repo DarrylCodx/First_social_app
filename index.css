@@ -1,0 +1,138 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    background-attachment: fixed;
+}
+/*
+body{
+    background:url(../project_TCH/image/paris-cathegrale.jpeg) ;
+    background-size: cover;
+    height: 97vh;
+    background-attachment: fixed;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: white;
+}*/
+.sec1{
+    background: linear-gradient(45deg,#d2001a,#7462ff,#f48ef4,#f48e21,#23d5ab,#7462ff,rgb(249, 80, 80),#23de23,#674,#12f,#555,#343434);
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
+    height: 100vh;
+    width: 100%;
+}
+
+section svg{
+    position: absolute;
+    bottom: 0;
+}
+
+.container{
+    position: absolute;
+    backdrop-filter: blur(5px);
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px dashed rgba(0, 0, 255, 0.23);
+    border-radius: 60px;
+    padding-top: 5%;
+    margin-left: 35%;
+    margin-top: 20px;
+    box-sizing: border-box;
+    box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.458);
+}
+
+.rs{
+    margin-bottom: 10px;
+}
+
+.container h4{
+    text-decoration: underline;
+    color: blue;
+    font: bold;
+    font-size: larger;
+    font-weight: 300;
+}
+
+.info{
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 8%;
+}
+
+.info input, button {
+    font-size: 16px;
+    margin: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 60px;
+    outline: none;
+}
+
+.info input{
+    background-color: rgba(92, 92, 197, 0.181);
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 1px;
+    text-indent: 35px;
+}
+.info input::placeholder{
+    color: rgba(0, 0, 0, 0.475);
+}
+.name{
+    background-image: url(../project_TCH/image/contact-removebg-preview.png);
+    background-repeat:no-repeat;
+    background-size: 15px;
+    background-position:15px ;
+    color: black;
+}
+
+.password{
+    background-image: url(cadena-removebg-preview.png);
+    background-repeat:no-repeat;
+    background-size: 20px;
+    background-position:15px ;
+    color: black;
+}
+
+.info button{
+    background-color: blue;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+}
+
+.suggestion{
+    display: inline-flex;
+    width: 75%;
+    justify-content: space-evenly;
+
+}
+.suggestion options1{
+    color: white;
+    cursor: pointer;
+}
+
+.suggestion options2{
+    cursor: pointer;
+    display: flex;
+}
+
+@keyframes color{
+    0%{
+        background-position: 0% 50%;
+    }
+    25%{
+        background-position:100% 50%;
+    }
+    50%{
+        background-position: 0% 50%;
+    }
+    100%{
+        background-position: 100% 50%;
+    }
+
+}
